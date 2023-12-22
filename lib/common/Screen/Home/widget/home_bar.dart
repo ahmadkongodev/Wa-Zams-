@@ -14,7 +14,7 @@ class HomeBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text('Wa ZAMSE', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-          Image.asset('assets/logo/profile.png'),
+          Image.asset('assets/logo/icon.png', width: 40,),
         ],
       ),
     );

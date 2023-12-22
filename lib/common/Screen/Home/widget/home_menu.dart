@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:wazamse/common/Screen/Courses/courses.dart';
 import 'package:wazamse/common/Screen/Home/home.dart';
+import 'package:wazamse/common/Screen/Profile/profile.dart';
 
 
 
@@ -42,5 +43,5 @@ class AppScreenController extends GetxController {
 
   final Rx<int> selectedMenu = 0.obs;
 
-  final screens = [ HomeScreen(),  CoursesPage(), Container(),];
+  final screens = [ HomeScreen(),  CoursesPage(), ProfilePage(),];
 }

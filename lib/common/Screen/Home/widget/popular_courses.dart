@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:wazamse/common/Screen/Home/widget/all.dart';
 
 class PopularCourses extends StatelessWidget {
   const PopularCourses({
@@ -19,9 +21,7 @@ class PopularCourses extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {
-            // Action to perform when "VOIR TOUT" button is clicked
-          },
+          onPressed: () => Get.to(()=> const AllScreen()),
           child: const Text(
             'VOIR TOUT >',
             style: TextStyle(

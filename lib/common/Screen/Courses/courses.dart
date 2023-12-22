@@ -34,19 +34,12 @@ class _CoursesPageState extends State<CoursesPage>
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text("Courses",
           style: TextStyle(
             color: Colors.black),),
           backgroundColor: Colors.white,
           elevation: 0,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back,
-            color: Colors.black,), // Icône de retour
-            onPressed: () {
-              // Action à effectuer lors de l'appui sur l'icône de retour
-              Navigator.of(context).pop(); // Pour retourner en arrière par exemple
-            },
-          ),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
@@ -68,33 +61,41 @@ class _CoursesPageState extends State<CoursesPage>
                       borderRadius: BorderRadius.circular(5),
                       ),
                   child: Column(
-                    children: [
-                      TabBar(
-                        unselectedLabelColor: Colors.black,
-                        labelColor: Colors.white,
-                        indicatorColor: Colors.white,
-                        indicatorWeight: 1,
-                        indicator: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        controller: tabController,
-                        tabs: const [
-                          Tab(
-                            text: 'Complete',
-                          ),
-                          Tab(
-                            text: 'En cours',
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+  children: [
+    Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey.withOpacity(0.5),
+          width: 1,
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: TabBar(
+        unselectedLabelColor: Colors.black,
+        labelColor: Colors.blue,
+        indicatorColor: Colors.blue,
+        //indicatorWeight: 2,
+        indicator: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        controller: tabController,
+        tabs: const [
+          Tab(
+            text: 'Complete',
+          ),
+          Tab(
+            text: 'En cours',
+          ),
+        ],
+      ),
+    ),
+  ],
+),
                 ),
                 Expanded(
                   child: TabBarView(
                     controller: tabController,
-                    
                     children: [
                       Completed(),
                       Encour()
